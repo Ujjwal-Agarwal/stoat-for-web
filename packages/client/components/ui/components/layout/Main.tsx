@@ -18,7 +18,7 @@ export const main = cva({
     paddingInline: "var(--gap-md)",
     marginInline: "var(--gap-md)",
     marginBlockEnd: "var(--gap-md)",
-    borderRadius: "var(--borderRadius-xl)",
-    background: "var(--md-sys-color-surface-container-lowest)",
+    // borderRadius: "var(--borderRadius-xl)",
+    // background: "var(--md-sys-color-surface-container-lowest)",
   },
 });

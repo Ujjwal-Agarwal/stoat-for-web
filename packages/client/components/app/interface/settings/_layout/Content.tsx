@@ -66,8 +66,8 @@ const base = cva({
     flexDirection: "row",
     display: "flex",
     background: "var(--md-sys-color-surface-container-low)",
-    borderStartStartRadius: "30px",
-    borderEndStartRadius: "30px",
+    // borderStartStartRadius: "30px",
+    // borderEndStartRadius: "30px",
 
     "& > a": {
       textDecoration: "none",
