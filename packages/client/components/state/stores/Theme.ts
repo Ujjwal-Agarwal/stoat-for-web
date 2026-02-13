@@ -42,7 +42,8 @@ export type TypeTheme = {
     | "fidelity"
     | "content"
     | "rainbow"
-    | "fruit_salad";
+    | "fruit_salad"
+    | "amoled";
 
   /**
    * Whether to permit blurry surfaces
@@ -73,7 +74,6 @@ export type TypeTheme = {
 export type SelectedTheme = Pick & {
   preset: "you";
   darkMode: boolean;
-
   accent: string;
   contrast: number;
   variant: TypeTheme["m3Variant"];
@@ -171,6 +171,7 @@ export class Theme extends AbstractStore {
         "content",
         "rainbow",
         "fruit_salad",
+        "amoled"
       ].includes(input.m3Variant!)
     ) {
       data.m3Variant = input.m3Variant!;
@@ -207,9 +208,9 @@ export class Theme extends AbstractStore {
           messageGroupSpacing: opts.messageGroupSpacing,
           preset: "you",
           darkMode:
+            opts.m3Variant === "amoled" ||
             opts.mode === "dark" ||
             (opts.mode === "system" && this.prefersDark()),
-
           accent: opts.m3Accent,
           contrast: opts.m3Contrast,
           variant: opts.m3Variant,

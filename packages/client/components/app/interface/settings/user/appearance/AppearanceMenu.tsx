@@ -270,11 +270,19 @@ export function AppearanceMenu() {
           </Button> */}
             <Button
               size="xs"
-              group="connected-end"
+              group="connected"
               groupActive={state.theme.m3Variant === "fruit_salad"}
               onPress={() => state.theme.setM3Variant("fruit_salad")}
             >
               <Trans>Fruit Salad</Trans>
+            </Button>
+            <Button
+              size="xs"
+              group="connected-end"
+              groupActive={state.theme.m3Variant === "amoled"}
+              onPress={() => state.theme.setM3Variant("amoled")}
+            >
+              <Trans>Amoled</Trans>
             </Button>
           </Row>
         </Show>

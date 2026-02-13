@@ -169,13 +169,16 @@ function generateMaterialYouScheme(
     case "vibrant":
       scheme = new SchemeVibrant(hct, darkMode, contrast);
       break;
+    case "amoled":
+      scheme = new SchemeTonalSpot(hct, true, contrast);
+      break;
     case "tonal_spot":
     default:
       scheme = new SchemeTonalSpot(hct, darkMode, contrast);
       break;
   }
 
-  return {
+  const colours: MaterialColours = {
     primary: hexFromArgb(scheme.primary),
     "on-primary": hexFromArgb(scheme.onPrimary),
     "primary-container": hexFromArgb(scheme.primaryContainer),
@@ -228,4 +231,20 @@ function generateMaterialYouScheme(
     scrim: hexFromArgb(scheme.scrim),
     shadow: hexFromArgb(scheme.shadow),
   };
+
+  if (variant === "amoled") {
+    const black = "#000000";
+    colours["surface-dim"] = black;
+    colours.surface = black;
+    colours["surface-bright"] = black;
+    colours["surface-container-lowest"] = black;
+    colours["surface-container-low"] = black;
+    colours["surface-container"] = black;
+    colours["surface-container-high"] = black;
+    colours["surface-container-highest"] = black;
+    colours.scrim = black;
+    colours.shadow = black;
+  }
+
+  return colours;
 }
