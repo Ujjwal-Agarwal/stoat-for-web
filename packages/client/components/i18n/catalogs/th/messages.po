@@ -346,6 +346,10 @@ msgstr "เป็นเพื่อนกับผู้ใช้นี้แล
 msgid "American (MM/DD/YYYY)"
 msgstr ""
 
+#: components/app/interface/settings/user/appearance/AppearanceMenu.tsx
+msgid "Amoled"
+msgstr ""
+
 #: components/modal/modals/Error2.tsx
 msgid "An error occurred."
 msgstr ""
