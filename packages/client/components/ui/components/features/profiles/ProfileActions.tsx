@@ -12,8 +12,10 @@ import MdEdit from "@material-design-icons/svg/filled/edit.svg?component-solid";
 import MdMoreVert from "@material-design-icons/svg/filled/more_vert.svg?component-solid";
 
 import { Button, IconButton } from "../../design";
-import { dismissFloatingElements } from "../../floating";
+import { dismissFloatingElements, Tooltip } from "../../floating";
 import { iconSize } from "../../utils";
+import MdPersonAdd from "@material-design-icons/svg/outlined/person_add.svg?component-solid";
+// import MdPersonCheck from "@material-design-icons/svg/outlined/person_check.svg?component-solid";
 
 /**
  * Actions shown on profile cards
@@ -50,12 +52,18 @@ export function ProfileActions(props: {
   return (
     <Actions width={props.width}>
       <Show when={props.user.relationship === "None" && !props.user.bot}>
-        <Button onPress={() => props.user.addFriend()}>Add Friend</Button>
+        <Tooltip placement={"right-start"} content={"Send a Friend Request"}>
+          <Button variant={"text"} onPress={() => props.user.addFriend()}>
+            <MdPersonAdd />
+          </Button>
+        </Tooltip>
       </Show>
       <Show when={props.user.relationship === "Incoming"}>
-        <Button onPress={() => props.user.addFriend()}>
-          Accept friend request
-        </Button>
+          <Tooltip placement={"right-start"} content={"Accept friend request"}>
+            <Button variant={"text"} onPress={() => props.user.addFriend()}>
+              {/*<MdPersonCheck />*/}
+            </Button>
+          </Tooltip>
         <IconButton onPress={() => props.user.removeFriend()}>
           <MdCancel />
         </IconButton>
@@ -81,9 +89,9 @@ export function ProfileActions(props: {
             : props.user.self
         }
       >
-        <IconButton onPress={openEdit}>
-          <MdEdit {...iconSize(16)} />
-        </IconButton>
+        {/*<IconButton onPress={openEdit}>*/}
+        {/*  <MdEdit {...iconSize(16)} />*/}
+        {/*</IconButton>*/}
       </Show>
 
       <IconButton
@@ -103,7 +111,7 @@ export function ProfileActions(props: {
 const Actions = styled("div", {
   base: {
     display: "flex",
-    gap: "var(--gap-md)",
+    gap: "var(--gap-sm)",
     justifyContent: "flex-end",
   },
   variants: {

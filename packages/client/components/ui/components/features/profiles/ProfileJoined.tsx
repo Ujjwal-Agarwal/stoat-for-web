@@ -14,21 +14,23 @@ export function ProfileJoined(props: { user: User; member?: ServerMember }) {
   const dayjs = useTime();
 
   return (
-    <ProfileCard>
-      <Text class="title" size="large">
+    <ProfileCard
+      width={2}
+    >
+      <Text class="title" size="small">
         <Trans>Joined</Trans>
       </Text>
       <Text class="label">
         <OverflowingText>Stoat</OverflowingText>
         {/* <Trans>Account Created</Trans> */}
       </Text>
-      <Text>{dayjs(props.user.createdAt).format("DD MMM YYYY")}</Text>
+      <Text size = "small">{dayjs(props.user.createdAt).format("DD MMM YYYY")}</Text>
       <Show when={props.member}>
         <Text class="label">
           <OverflowingText>{props.member!.server!.name}</OverflowingText>
           {/* <Trans>Member Since</Trans> */}
         </Text>
-        <Text>{dayjs(props.member!.joinedAt).format("DD MMM YYYY")}</Text>
+        <Text size = "small">{dayjs(props.member!.joinedAt).format("DD MMM YYYY")}</Text>
       </Show>
     </ProfileCard>
   );

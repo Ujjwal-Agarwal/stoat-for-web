@@ -13,8 +13,10 @@ export function ProfileStatus(props: { user: User }) {
 
   return (
     <Show when={props.user.status?.text}>
-      <ProfileCard>
-        <Text class="title" size="large">
+      <ProfileCard
+        width={2}
+      >
+        <Text class="title" size="small">
           <Trans>Status</Trans>
         </Text>
         <Status>

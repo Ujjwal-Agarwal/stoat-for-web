@@ -14,10 +14,10 @@ export const ProfileCard = styled("div", {
     background: "var(--md-sys-color-surface-container-low)",
 
     padding: "var(--gap-lg)",
-    borderRadius: "var(--borderRadius-lg)",
+    // borderRadius: "var(--borderRadius-lg)",
 
     display: "flex",
-    gap: "var(--gap-sm)",
+    // gap: "var(--gap-sm)",
     flexDirection: "column",
   },
   variants: {

@@ -77,7 +77,7 @@ const Banner = styled("div", {
     backgroundSize: "cover",
     backgroundPosition: "center",
 
-    borderRadius: "var(--borderRadius-xl)",
+    // borderRadius: "var(--borderRadius-xl)",
 
     color: "white",
   },
