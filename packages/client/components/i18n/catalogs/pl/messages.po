@@ -2291,7 +2291,6 @@ msgstr ""
 msgid "Role Name"
 msgstr "Nazwa roli"
 
-#: components/ui/components/features/profiles/ProfileRoles.tsx
 #: components/app/interface/settings/ServerSettings.tsx
 msgid "Roles"
 msgstr "Role"
