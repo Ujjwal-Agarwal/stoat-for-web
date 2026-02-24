@@ -104,7 +104,9 @@ export function ProfileRoles(props: { member?: ServerMember }) {
                 setShowAllRoles(!showAllRoles());
               }}
             >
-              +{overflow()}
+              {" "}
+              {showAllRoles() ? "<" : "+" + overflow()}
+              {/*+{overflow()}*/}
             </OverflowButton>
           </Show>
         </RolesDiv>
