@@ -6,7 +6,7 @@ import { styled } from "styled-system/jsx";
 import { useModals } from "@revolt/modal";
 
 import { Ripple, typography } from "../../design";
-import { dismissFloatingElements } from "../../floating";
+import { dismissFloatingElements, Tooltip } from "../../floating";
 
 import { ProfileCard } from "./ProfileCard";
 
@@ -105,7 +105,15 @@ export function ProfileRoles(props: { member?: ServerMember }) {
               }}
             >
               {" "}
-              {showAllRoles() ? "<" : "+" + overflow()}
+              {showAllRoles() ? (
+                <Tooltip placement={"top"} content={"Collapse Roles"}>
+                  &lt
+                </Tooltip>
+              ) : (
+                <Tooltip placement={"top"} content={"View All Roles"}>
+                  +{overflow()}
+                </Tooltip>
+              )}
               {/*+{overflow()}*/}
             </OverflowButton>
           </Show>
