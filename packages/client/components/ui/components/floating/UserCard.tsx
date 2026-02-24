@@ -64,9 +64,11 @@ export function UserCard(
         <Profile.Actions user={props.user} member={props.member} width={2} />
       </StatusField>
 
+      <Profile.Roles member={props.member} />
+
       <Marquee>
         {/*Marquee these items*/}
-        <Profile.Roles member={props.member} />
+
         <Profile.Badges user={props.user} />
       </Marquee>
       <Grid>

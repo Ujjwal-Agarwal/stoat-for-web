@@ -38,6 +38,11 @@ export const ProfileCard = styled("div", {
         overflow: "hidden",
         aspectRatio: "2/1",
       },
+      fitContent:{
+        height: "fit-content",
+        width: "100%",
+        aspectRatio: "unset",
+      }
     },
     isLink: {
       true: {
