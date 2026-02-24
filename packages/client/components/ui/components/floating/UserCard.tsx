@@ -20,7 +20,7 @@ const base = cva({
     boxShadow: "0 0 3px var(--md-sys-color-shadow)",
 
     width: "300px",
-    height: "400px",
+    height: "600px",
 
     borderRadius: "var(--borderRadius-sm)",
   },
@@ -61,20 +61,30 @@ export function UserCard(
       />
       <StatusField class={"flex-auto"}>
         <Profile.Status user={props.user} />
-        <Profile.Actions user={props.user} member={props.member} width={2}  />
+        <Profile.Actions user={props.user} member={props.member} width={2} />
       </StatusField>
 
-      <Grid>
-
-        <Profile.Joined user={props.user} member={props.member} />
+      <Marquee>
+        {/*Marquee these items*/}
         <Profile.Roles member={props.member} />
         <Profile.Badges user={props.user} />
-
+      </Marquee>
+      <Grid>
+        <Profile.Joined user={props.user} member={props.member} />
         <Profile.Bio content={query.data?.content} onClick={openFull} />
       </Grid>
     </div>
   );
 }
+
+const Marquee = styled("div",{
+  base:{
+    display: "inline-flex",
+    flexDirection: "column",
+    padding: "var(--gap-sm)",
+    background: "var(--md-sys-color-surface-container-low)",
+  },
+});
 
 const StatusField = styled("div",{
   base:{
